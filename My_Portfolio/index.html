@@ -29,12 +29,12 @@
       </ul>
     </nav>
     <h1>Hello, World!</h1>
-    <p>This is my portfolio - still in progress. Hello!!!</p>
+    <p>This is my portfolio - still in progress.</p>
     <img
       src="assets/solidsnake.jpeg"
       alt="alternative text"
       width="700"
-      height="150"
+      height="250"
     />
     <section1>
       <h2>My Hobbies</h2>
@@ -62,7 +62,7 @@
         <dd>JavaScript</dd>
       </dl>
     </section3>
-    <section4>
+      <section4>
       <h2>My Contacts</h2>
       <table border="1">
         <thead>
@@ -80,6 +80,77 @@
             <td>Student</td>
         </tbody>
       </table>
+    </section4>
+    <form 
+    action="#"
+    method="post">
+    
+    <fieldset>
+      <legend>Project Details</legend>
+      <label for="worktype">What type of work do you need?</label>
+  <select 
+  name="work" 
+  id="work" 
+  required>
+    <option value="website">Website</option>
+    <option value="web_app">Web App</option>
+    <option value="bug_fixes">Bug Fixes</option>
+    <option value="consultation">Consultation</option>
+  </select>
+  <br>
+  <label for="technologica">What technologies are involved?</label>
+  </br>
+  <input type="checkbox" id="html">HTML
+  <br>
+<input type="checkbox" id="css">CSS
+<br>
+<input type="checkbox" id="js">JavaScript
+<br>
+<input type="checkbox" id="react">React
+<br>
+<input type="checkbox" id="node">Node.js
+<br>
+<label for="description">Describe your project:</label>
+<br>
+<textarea
+name="description"
+id="description"
+cols="30"
+rows="10"
+placeholder="Project description here...">
+</textarea>
+<br>
+  </fieldset>
+  <fieldset>
+    <legend>Budget and Timeline</legend>
+  <label for="budget">Project Budget:</label>
+    <input 
+    type="number" 
+    id="budget" 
+    placeholder="Enter budget" required>
+    <br>
+  <label for="urgency">Urgency:</label>
+<br>
+  <input type="radio" id="ASAP">ASAP
+<br>
+<input type="radio" id="2weeks">2 Weeks
+<br>
+<input type="radio" id="flexible">Flexible
+  </fieldset>
+  <fieldset>
+    <legend>Your Information</legend>
+  <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter name" required>
+    <br>
+  <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter email" required>
+    <br>
+  <label for="company">Company or Organization:</label>
+    <input type="text" id="company" placeholder="Enter company name" optional>
+  </fieldset>
+  <button type="request">Send Request</button>
+  </form>
+    
     <footer>
       <p>© 2025 Albin Milton    
       <a href="https://github.com/AlbinMilton"
