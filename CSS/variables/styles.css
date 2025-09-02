@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #3498db;
+  --card-bg-color: #f4f4f4;
+  --card-padding: 1rem;
+  --card-border-radius: 8px;
+  --card-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --position: center;
+  --width: 600px;
+  --height: 400px;
+  --margin: 200px auto;
+}
+.card {
+  color: var(--primary-color);
+  background-color: var(--card-bg-color);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  border-color: var(--border-color);
+  text-align: var(--position);
+  width: var(--width);
+  height: var(--height);
+  align-items: var(--position);
+  margin: var(--margin);
+  box-shadow: var(--card-shadow);
+
+  h1 {
+    color: red;
+    font-style: italic;
+  }
+  img {
+    height: 200px;
+    width: 300px;
+  }
+}
