@@ -1,0 +1,22 @@
+span {
+  color: red;
+  display: block;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+.box1 {
+  background-color: lightblue;
+}
+.box1 p {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.box2 {
+  background-color: lightgreen;
+}
