@@ -49,6 +49,19 @@ html {
   font-size: var(--font-base);
 }
 
+header {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+nav ul :hover {
+  text-decoration: none;
+}
+
 /* Make images responsive by default */
 img {
   max-width: 100%;
