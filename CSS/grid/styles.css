@@ -6,12 +6,12 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header header header"
+    "header header header "
     "aside main ad"
     "footer footer footer";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: auto 1fr auto;
-  height: 50vh;
+  height: 100vh;
 }
 
 .header {
@@ -28,6 +28,7 @@
   display: flex;
   list-style: none;
   gap: 15px;
+  place-items: center;
 }
 .header nav ul li a {
   text-decoration: none;
@@ -36,11 +37,47 @@
 .aside {
   grid-area: aside;
   background-color: rgb(221, 22, 22);
+  padding: 20px;
+}
+
+.aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+.aside nav a {
+  text-decoration: none;
+  color: white;
 }
 .main {
   grid-area: main;
   background-color: lightgreen;
 }
+.main h2 {
+  padding: 20px;
+}
+.main h1 {
+  padding: 20px;
+  font-size: 40px;
+}
+.main p {
+  padding: 20px;
+  font-size: 20px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.container .box {
+  gap: 40px;
+  background-color: lightgray;
+  border-radius: 8px;
+  padding: 20px;
+}
+
 .ad {
   grid-area: ad;
   background-color: lightcoral;
@@ -49,4 +86,7 @@
   grid-area: footer;
   background-color: lightyellow;
   text-align: center;
+}
+.footer p {
+  padding: 20px;
 }
