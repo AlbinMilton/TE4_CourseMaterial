@@ -24,17 +24,9 @@ for (const item of listItems) {
 }
 console.log(listItems);
 
-//remove element
-const rmrf = document.querySelector(".box");
-rmrf.remove();
-
 //event listeners
 
-//button creation
-const button = document.createElement("button");
-const body = document.querySelector("body");
-body.appendChild(button);
-
+const button = document.getElementById("button");
 button.innerText = "Click Me";
 button.style.backgroundColor = "blue";
 button.style.color = "white";
@@ -47,41 +39,57 @@ button.addEventListener("click", () => {
   button.style.backgroundColor = "lightpink";
 });
 
-//box creation with hover effect
-const box = document.createElement("div");
-body.appendChild(box);
+//Exercise
+const box = document.getElementById("box");
 box.style.width = "300px";
 box.style.height = "300px";
-box.style.backgroundColor = "red";
+box.style.backgroundColor = "white";
 box.style.transition = "all 500ms ease";
 
 box.addEventListener("mouseover", () => {
-  box.style.backgroundColor = "green";
-});
-
-box.addEventListener("mouseout", () => {
   box.style.backgroundColor = "red";
 });
 
-//Input keydown + keyup
+box.addEventListener("mouseout", () => {
+  box.style.backgroundColor = "white";
+});
+
 const log = document.getElementById("log");
 const input = document.getElementById("input");
 
 input.addEventListener("keydown", (event) => {
   log.textContent = `Key pressed: ${event.key}`;
-  if (event.key === "å" || event.key === "ä" || event.key === "ö") {
-    window.alert("Forbidden key pressed!");
-  }
+  const length = event.target.value.length;
+  console.log(length);
 });
 input.addEventListener("keyup", (event) => {
   log.textContent = `Key released: ${event.key}`;
 });
 
+//form
 const form = document.getElementById("myForm");
+const username = document.getElementById("username");
 const formLog = document.getElementById("formLog");
+
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formLog.textContent = `Form submitted`;
+  if (username.value.length === 0) {
+    event.preventDefault();
+    formLog.textContent = `Form not submitted`;
+  } else {
+    formLog.textContent = `Form submitted`;
+  }
 });
 
-//Exercise
+//scroll
+const scroll = document.getElementById("scroll-msg");
+window.addEventListener("scroll", () => {});
+
+//size
+const size = document.getElementById("size");
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 600) {
+    window.alert("Window is too small!");
+  } else {
+    console.log("Window size is fine");
+  }
+});
