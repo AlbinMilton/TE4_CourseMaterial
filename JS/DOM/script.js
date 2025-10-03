@@ -72,8 +72,8 @@ const username = document.getElementById("username");
 const formLog = document.getElementById("formLog");
 
 form.addEventListener("submit", (event) => {
+  event.preventDefault();
   if (username.value.length === 0) {
-    event.preventDefault();
     formLog.textContent = `Form not submitted`;
   } else {
     formLog.textContent = `Form submitted`;
@@ -82,7 +82,21 @@ form.addEventListener("submit", (event) => {
 
 //scroll
 const scroll = document.getElementById("scroll-msg");
-window.addEventListener("scroll", () => {});
+scroll.style.height = "10px";
+scroll.style.width = "0%";
+scroll.style.border = "1px solid black";
+scroll.style.position = "fixed";
+scroll.style.backgroundColor = "blue";
+scroll.style.top = "0";
+scroll.style.left = "0";
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+  scroll.style.width = `${scrollPercent}%`;
+});
 
 //size
 const size = document.getElementById("size");
