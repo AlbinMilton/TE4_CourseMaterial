@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>🦹🏻‍♂️Betifull Pics</h1>
+      <label for="themeSelect">Choose a theme:</label>
+      <select id="themeSelect" class="btn">
+        <option value="system">System</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </header>
+    <main class="container">
+      <figure class="viewer" aria-live="polite">
+        <img src="" alt="" id="mainImage" />
+        <figcaption id="caption"></figcaption>
+      </figure>
+      <section>
+        <h2 class="sr-only">Thumbnails</h2>
+        <ul id="thumbs" class="thumbs" aria-lable="Image-Thumbnails"></ul>
+      </section>
+    </main>
+    <dialog id="lightbox" class="lightbox" aria-label="Image Preview">
+      <img src="" alt="" id="lightboxImage" />
+      <p id="lightboxCaption"></p>
+      <button
+        id="closeLightbox"
+        class="btn"
+        aria-label="Close Preview"
+      ></button>
+    </dialog>
+    <button id="topBtn" class="top-btn" aria-label="Back to top"></button>
+    <script src="./script.js"></script>
+  </body>
+</html>
