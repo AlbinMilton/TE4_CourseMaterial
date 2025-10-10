@@ -62,16 +62,49 @@ async function loadData() {
 loadData();
 
 //2
-//Write a function that retries fetching the load data up to 3 times if the fetch fails.
-async function retryFetch(url, retries = 3) {
-  for (let i = 0; i < retries; i++) {
+async function retryFetch(url, retries = 3, backoffMs = 500) {
+  let attempts = 0;
+  while (attempts <= retries) {
     try {
-      let response = await fetch(url);
-      if (!response.ok) throw new Error("Fetch failed");
-      let data = await response.json();
-      return data;
+      let res = await fetch(url);
+      if (!res.ok) throw new Error("Fetch failed");
+      return res;
     } catch (error) {
-      if (i === retries - 1) throw error;
+      if (attempts === retries) throw error;
+      await wait(backoffMs * (attempts + 1));
     }
+    attempts++;
   }
 }
+
+const demoRetryFetch = async () => {
+  try {
+    const res = await retryFetch(
+      "https://jsonplaceholder.typicode.com/users/1"
+    );
+    const data = await res.json();
+    console.log(`Success after`, data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const fetchpostfirstandfirstcomment = async () => {
+  try {
+    const postRes = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if (!postRes.ok) throw new Error(`HTTP code ${postRes.status}`);
+    const posts = await postRes.json();
+    const firstPost = posts[0];
+
+    const commentRes = await fetch(
+      `https://jsonplaceholder.typicode.com/posts/${firstPost.id}`
+    );
+    if (!commentRes.ok) throw new Error(`HTTP code ${commentRes.status}`);
+    const comments = await commentRes.json();
+
+    console.log(`First post ${firstPost}`);
+    console.log(`Comments for First post ${comments.slice(0, 3)}`);
+  } catch (error) {
+    console.log("fa");
+  }
+};
