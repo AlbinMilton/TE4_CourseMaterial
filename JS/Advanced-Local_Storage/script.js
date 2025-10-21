@@ -93,3 +93,16 @@ window.addEventListener("load", () => {
     document.body.classList.add("dark");
   }
 });
+
+const form = document.getElementById("itemForm");
+const itemInput = document.getElementById("itemInput");
+const list = document.getElementById("itemList");
+const create = document.getElementById("btn");
+
+create.addEventListener("click", (e) => {
+  if (itemInput.value === "") return;
+  e.preventDefault();
+  const listItem = document.createElement("li");
+  listItem.textContent = `Task: ${itemInput.value}`;
+  list.appendChild(listItem);
+});
