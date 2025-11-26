@@ -15,9 +15,11 @@
 // import RenderCounter from "./components/useRef_examples/renderCounter";
 // import PreviousText from "./components/useRef_examples/previousText";
 // import UseCard from "./components/Tasks/usecard";
-import ConditionRender from "./components/Tasks/logged.in";
-import UserStatus from "./components/Tasks/status.light";
-import Username from "./components/Tasks/username";
+// import ConditionRender from "./components/Tasks/logged.in";
+// import UserStatus from "./components/Tasks/status.light";
+// import Username from "./components/Tasks/username";
+import CustomButton from "./components/Tasks/custom.button";
+import ToggleUI from "./components/Tasks/import.custom.button";
 function App() {
   return (
     <div className="">
@@ -54,10 +56,15 @@ function App() {
       <hr />
       <PreviousText />
       <hr /> 
-      <UseCard />  */}
+      <UseCard /> 
       <ConditionRender />
       <UserStatus isOnline />
-      <Username isAdmin />
+      <Username isAdmin /> */}
+      <CustomButton
+        label="Click Me"
+        onClick={() => console.log("Button Clicked!")}
+      />
+      <ToggleUI isVisible />
     </div>
   );
 }
