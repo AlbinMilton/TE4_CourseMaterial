@@ -11,10 +11,13 @@
 // import ProfileCardComponent from "./components/Tasks/profile.card.component";
 // import MovieListComponent from "./components/Tasks/movie.list.component";
 // import EffectComponent from "./components/example_components/effect";
-import InputFocus from "./components/useRef_examples/inputFocus";
-import RenderCounter from "./components/useRef_examples/renderCounter";
-import PreviousText from "./components/useRef_examples/previousText";
-import UseCard from "./components/Tasks/usecard";
+// import InputFocus from "./components/useRef_examples/inputFocus";
+// import RenderCounter from "./components/useRef_examples/renderCounter";
+// import PreviousText from "./components/useRef_examples/previousText";
+// import UseCard from "./components/Tasks/usecard";
+import ConditionRender from "./components/Tasks/logged.in";
+import UserStatus from "./components/Tasks/status.light";
+import Username from "./components/Tasks/username";
 function App() {
   return (
     <div className="">
@@ -44,14 +47,17 @@ function App() {
       <hr />
       <MovieListComponent />
       <hr />
-      <EffectComponent /> */}
+      <EffectComponent /> 
       <InputFocus />
       <hr />
       <RenderCounter />
       <hr />
       <PreviousText />
-      <hr />
-      <UseCard />
+      <hr /> 
+      <UseCard />  */}
+      <ConditionRender />
+      <UserStatus isOnline />
+      <Username isAdmin />
     </div>
   );
 }
